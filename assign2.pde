@@ -10,6 +10,7 @@ float speed;
 int life;
 int currentTime = 0;
 
+
 final int GAME_START = 1;
 final int GAME_WIN = 2;
 final int GAME_LOSE = 3;
@@ -210,10 +211,12 @@ void keyPressed() {
        else if(frogX<0){frogX=0;}
        else if(frogY>452){frogY=452;}
     }
-    if(key==ENTER /*still needs something*/){
+    
+    if(key==ENTER && gameState != GAME_RUN && gameState != FROG_DIE /*still needs something*/){
       gameState = GAME_RUN;
       life=3;
       frogX = frogInitX;
       frogY = frogInitY;
     }
+    
 }
